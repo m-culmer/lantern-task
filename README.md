@@ -3,7 +3,7 @@
 Project Steps taken:
 
 1. Create dbt project and establish connection. Steps taken:
-   - Installed VScode
+   - Installed VScode (and relevant extensions)
    - Installed Python & pip
    - Installed Git
    - Installed dbt with duckdb adapter: **pip install dbt-duckdb**
