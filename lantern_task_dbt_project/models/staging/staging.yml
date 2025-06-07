@@ -1,21 +1,112 @@
-
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: stg_transactions
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - company
+            - date
+            - transaction_type
+            - amount
+            - number
     columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
+      - name: company
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: transaction_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Buy Item Cost', 'Sales of Item', 'Upkeep Cost']
+      - name: amount
+        tests:
+          - not_null
+      - name: number
+        tests:
           - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+  - name: stg_company_report
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - company_id
+            - quarter
     columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
+      - name: company_id
+        tests:
+          - not_null
+      - name: company
+        tests:
+          - not_null
+      - name: quarter
+        tests:
+          - not_null
+      - name: sales_amount
+        tests:
+          - not_null
+      - name: buy_cost_amount
+        tests:
+          - not_null
+      - name: total_cost
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: stg_fund_info
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - company_id
+            - fund 
+            - amount_invested
+            - invested_date
+    columns:
+      - name: company_id
+        tests:
+          - not_null
+      - name: company
+        tests:
+          - not_null
+      - name: fund
+        tests:
+          - not_null
+      - name: amount_invested
+        tests:
+          - not_null
+      - name: invested_date
+        tests:
+          - not_null
+
+  - name: stg_new_transactions
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - company
+            - date
+            - transaction_type
+            - amount
+            - number
+    columns:
+      - name: company
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: transaction_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Buy Item Cost', 'Sales of Item', 'Upkeep Cost']
+      - name: amount
+        tests:
+          - not_null
+      - name: number
+        tests:
           - not_null
