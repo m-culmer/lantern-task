@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: transactions
+    database: transactions
+    schema: main
+    tables:
+      - name: transactions
+      - name: company_report
+      - name: fund_info
+      - name: new_transactions
