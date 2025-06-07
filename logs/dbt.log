@@ -1,0 +1,31 @@
+[0m17:30:20.385301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A76F3EB380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A76D4696D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A77014D450>]}
+
+
+============================== 17:30:20.397287 | cccab60c-7ad4-4199-9d61-719b6ae1abb1 ==============================
+[0m17:30:20.397287 [info ] [MainThread]: Running with dbt=1.9.6
+[0m17:30:20.397663 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\MaxCu\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt init lantern_task_dbt_project', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:30:20.407874 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'WindowsPath'.. Dictionary: {'dir': WindowsPath('C:/Users/MaxCu/.dbt')}
+[0m17:30:20.408140 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m17:30:20.409383 [debug] [MainThread]: Starter project path: C:\Users\MaxCu\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m17:30:20.421821 [info ] [MainThread]: 
+Your new dbt project "lantern_task_dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:30:20.422143 [info ] [MainThread]: Setting up your profile.
+[0m17:40:04.663161 [info ] [MainThread]: Profile lantern_task_dbt_project written to C:\Users\MaxCu\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m17:40:04.663766 [debug] [MainThread]: Command `dbt init` succeeded at 17:40:04.663687 after 584.35 seconds
+[0m17:40:04.663975 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A77069ED70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A7717BD910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A77068E140>]}
+[0m17:40:04.664199 [debug] [MainThread]: Flushing usage events
+[0m17:40:05.081561 [debug] [MainThread]: An error was encountered while trying to flush usage events
