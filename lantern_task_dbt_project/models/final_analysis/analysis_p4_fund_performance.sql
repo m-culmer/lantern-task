@@ -13,7 +13,7 @@ fund_performance_company_level as (
     sum(case when tc.transaction_type <> 'Sales of Item' then tc.amount else 0 end) as cost,
     sales - cost as gross_profit,
     round((gross_profit / amount_invested) * 100, 2) as fund_company_roi_percent,
-    power((amount_invested + gross_profit) / amount_invested, 1.0 / years_invested) - 1 as annualized_roi,
+    power((amount_invested + gross_profit) / amount_invested, 1.0 / years_invested) - 1 as annualised_roi,
     round((amount_invested + gross_profit) / amount_invested, 2) as moic 
     from int_transactions_combined tc
     inner join stg_fund_info fi on tc.company_id = fi.company_id -- using inner join to exclude pre-invested date
