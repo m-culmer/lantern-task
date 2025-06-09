@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: company_report_v2
+    description: "Contains quarterly reported metrics for each company."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - company
+            - quarter
+    columns:
+      - name: company
+        description: "The name of the company."
+        tests:
+          - not_null
+      - name: quarter
+        description: "The fiscal quarter for the reported metrics, shown as the first date of the quarter, formatted as YYYY-DD-MM."
+        tests:
+          - not_null
+
+  - name: dim_companies
+    description: "Dimension table listing companies with unique identifiers."
+    columns:
+      - name: company_id
+        description: "Unique identifier for each company."
+        tests:
+          - not_null
+          - unique
+      - name: company
+        description: "The name of the company."
+        tests:
+          - not_null

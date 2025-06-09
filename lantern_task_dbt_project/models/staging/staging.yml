@@ -8,8 +8,6 @@ models:
             - company
             - date
             - transaction_type
-            - amount
-            - number
     columns:
       - name: company
         tests:
@@ -90,8 +88,6 @@ models:
             - company
             - date
             - transaction_type
-            - amount
-            - number
     columns:
       - name: company
         tests:
