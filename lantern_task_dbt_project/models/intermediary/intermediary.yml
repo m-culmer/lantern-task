@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_transactions_combined
+    description: "Intermediary model combining 2024 transactional data with 2025 'new_transaction' data, both containing related company and fund details used for further analysis."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - company_id
+            - date
+            - transaction_type
+            - amount
+            - number
+    columns:
+      - name: company_id
+        description: "Unique identifier for the company associated with the transaction."
+        tests:
+          - not_null
+      - name: company
+        description: "Name of the company involved in the transaction."
+        tests:
+          - not_null
+      - name: fund
+        description: "Name of the fund that owns or is associated with the company."
+      - name: date
+        description: "Date when the transaction occurred."
+        tests:
+          - not_null
+      - name: transaction_type
+        description: "Type/category of the transaction (e.g., Buy Item Cost, Sales of Item, Upkeep Cost)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Buy Item Cost', 'Sales of Item', 'Upkeep Cost']
+      - name: amount
+        description: "Monetary value involved in the transaction."
+        tests:
+          - not_null
+      - name: number
+        description: "Numeric quantity associated with the transaction (e.g., number of items)."
+        tests:
+          - not_null
